@@ -1,0 +1,17 @@
+Mem24CSM01  KEYWORD1
+
+begin   KEYWORD2
+getConfiguration KEYWORD2
+updateConfiguration KEYWORD2
+enableSoftwareWriteProtect  KEYWORD2
+disableSoftwareWriteProtect KEYWORD2
+setWriteProtectionZone  KEYWORD2
+writeProtection KEYWORD2
+removeWriteProtectionZone   KEYWORD2
+read    KEYWORD2
+write   KEYWORD2
+
+MemoryConfig    KEYWORD3
+MemoryPointer   KEYWORD3
+
+MEMORYRESULT    LITERAL1
