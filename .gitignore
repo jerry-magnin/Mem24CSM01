@@ -1,3 +1,4 @@
 /*.ino
 *.code-workspace
 .vscode/*
+arduino-lint.exe
