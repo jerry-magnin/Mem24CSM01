@@ -1,0 +1,23 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: 24CSM01 Library for Arduino
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jerry
+    family-names: Magnin
+repository-code: 'https://github.com/jerry-magnin/Mem24CSM01'
+abstract: >-
+  Library for interfacing Microchip 24CSM01 1-Mbit Memory
+  EEPROM chip with Arduino
+keywords:
+  - Memory
+  - Arduino
+  - Embedded
+license: MIT
+version: 0.9.0
+date-released: '2025-01-10'
