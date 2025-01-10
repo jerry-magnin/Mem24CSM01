@@ -1,3 +1,12 @@
+/*
+  Mem24CSM01 - Library for using Mem24CSM01 EEPROM chip
+  Author: Jerry Magnin
+  Licence: MIT
+*/
+
+#ifndef Mem24CSM01_h
+#define Mem24CSM01_h
+
 #include <stdint.h>
 #include "Arduino.h"
 #include <Wire.h>
@@ -81,3 +90,5 @@ class Mem24CSM01 {
     uint8_t m_security_register;
     MemoryConfig m_configuration;
 };
+
+#endif

@@ -67,6 +67,9 @@ bool Mem24CSM01::setWriteProtectionZone(uint8_t zone) {
   if(zone >=0 && zone <=7) {
     m_configuration.zoneProtection = bitSet(m_configuration.zoneProtection, zone);
     updateConfiguration();
+    return(true);
+  } else {
+    return(false);
   }
 }
 
@@ -79,6 +82,9 @@ bool Mem24CSM01::removeWriteProtectionZone(uint8_t zone) {
   if(zone >= 0 && zone <= 7) {
     m_configuration.zoneProtection = bitClear(m_configuration.zoneProtection, zone);
     updateConfiguration();
+    return(true);
+  } else {
+    return(false);
   }
 }
 
