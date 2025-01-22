@@ -3,7 +3,7 @@
 Mem24CSM01 memory(false, false);
 
 void setup() {
-    Serial.begin(9600)
+    Serial.begin(9600);
     memory.begin();
 
     // Disabling Software WP (in case it was active)

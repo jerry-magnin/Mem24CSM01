@@ -3,15 +3,15 @@
 Mem24CSM01 memory(false, false);
 
 void setup() {
-    Serial.begin(9600)
+    Serial.begin(9600);
     memory.begin();
 
     // Disabling Software WP (in case it was active)
     memory.disableSoftwareWriteProtect();
     
     MEMORYRESULT opResult;
-    uint8_t[3] byteArrayWrite = {20, 40, 80};
-    uint8_t[3] byteArrayRead = {0};
+    uint8_t byteArrayWrite[3] = {20, 40, 80};
+    uint8_t byteArrayRead[3] = {0};
     opResult = memory.write(18, byteArrayWrite, sizeof(byteArrayWrite)); // We write at adresse 18
     if(opResult==MEMORYRESULT::OK) {
       Serial.println("Write OK");

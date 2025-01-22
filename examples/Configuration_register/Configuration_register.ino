@@ -26,7 +26,7 @@ void explainConfig(uint16_t config) {
 }
 
 void setup() {
-    Serial.begin(9600)
+    Serial.begin(9600);
     memory.begin();
 
     // Reading the EEPROM Configuration and displaying it on Serial monitor
