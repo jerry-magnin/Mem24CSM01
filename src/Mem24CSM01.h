@@ -67,7 +67,9 @@ class Mem24CSM01 {
     Mem24CSM01(bool A1, bool A2);
     void begin();
 
-    uint16_t getConfiguration();
+    uint16_t getRawConfiguration();
+    MemoryConfig getConfiguration();
+    void setConfiguration(MemoryConfig config);
     bool updateConfiguration(uint8_t confirmLock=0x66);
     bool enableSoftwareWriteProtect();
     bool disableSoftwareWriteProtect();

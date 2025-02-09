@@ -7,7 +7,7 @@ void explainConfig(uint16_t config) {
   Serial.println(config, BIN);
   bool correctionWasRequired = (config >> 15) & 1;
   bool ewpActive = (config >> 9) & 1;
-  bool locked = (config >> 7) & 1;
+  bool locked = (config >> 8) & 1;
 
   if (correctionWasRequired) Serial.println("Correction Error Code was required on last read operation");
   if (locked) Serial.println("Configuration is locked");
@@ -30,13 +30,13 @@ void setup() {
     memory.begin();
 
     // Reading the EEPROM Configuration and displaying it on Serial monitor
-    uint16_t config = memory.getConfiguration();
+    uint16_t config = memory.getRawConfiguration();
     explainConfig(config);
 
     // Enabling Software Write Protect & protecting zone 0
     memory.enableSoftwareWriteProtect();
     memory.setWriteProtectionZone(0);
-    config = memory.getConfiguration();
+    config = memory.getRawConfiguration();
     explainConfig(config);
 
     // Disabling Software WP

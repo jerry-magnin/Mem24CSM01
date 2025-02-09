@@ -1,7 +1,7 @@
 #include "Mem24CSM01.h"
 
 
-uint8_t zoneProtection(bool zone7=0, bool zone6=0, bool zone5=0, bool zone4=0, bool zone3=0, bool zone2=0, bool zone1=0, bool zone0=0) {
+uint8_t zoneProtection(bool zone7, bool zone6, bool zone5, bool zone4, bool zone3, bool zone2, bool zone1, bool zone0) {
   uint8_t protectionPattern = 0;
   protectionPattern |= (zone7<<7) | (zone6<<6) | (zone5<<5) | (zone4<<4) | (zone3<<3) | (zone2<<2) | (zone1<<1) | zone0;
   return(protectionPattern);
@@ -21,7 +21,7 @@ void Mem24CSM01::begin() {
   Wire.begin();
 }
 
-uint16_t Mem24CSM01::getConfiguration() {
+uint16_t Mem24CSM01::getRawConfiguration() {
   uint16_t result;
   uint8_t low, high;
   Wire.beginTransmission(m_configuration_register);
@@ -40,7 +40,15 @@ uint16_t Mem24CSM01::getConfiguration() {
   return(result);
 }
 
-bool Mem24CSM01::updateConfiguration(uint8_t confirmLock=0x66) {
+MemoryConfig Mem24CSM01::getConfiguration() {
+  return(m_configuration);
+}
+
+void Mem24CSM01::setConfiguration(MemoryConfig config) {
+  m_configuration = config;
+}
+
+bool Mem24CSM01::updateConfiguration(uint8_t confirmLock) {
   // Preparing the config bytes
   uint8_t cfgHighByte = 0 | (m_configuration.softwareWriteProtect<<1) | m_configuration.configLocked;
   uint8_t cfgLowByte = m_configuration.zoneProtection;
