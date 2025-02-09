@@ -2,6 +2,7 @@
 
 
 uint8_t zoneProtection(bool zone7, bool zone6, bool zone5, bool zone4, bool zone3, bool zone2, bool zone1, bool zone0) {
+uint8_t zoneProtection(bool zone7, bool zone6, bool zone5, bool zone4, bool zone3, bool zone2, bool zone1, bool zone0) {
   uint8_t protectionPattern = 0;
   protectionPattern |= (zone7<<7) | (zone6<<6) | (zone5<<5) | (zone4<<4) | (zone3<<3) | (zone2<<2) | (zone1<<1) | zone0;
   return(protectionPattern);
